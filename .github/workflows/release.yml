@@ -1,0 +1,90 @@
+# Committing a new version needs heroscape-bot's bypass of the pull-request rule on main.
+# That push runs this workflow again, and that run deploys.
+name: Release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      committed: ${{ steps.build.outputs.committed }}
+    steps:
+      - name: Token to commit the new version
+        id: token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.HEROSCAPE_BOT_CLIENT_ID }}
+          private-key: ${{ secrets.HEROSCAPE_BOT_PRIVATE_KEY }}
+          permission-contents: write
+      - uses: actions/checkout@v7
+        with:
+          token: ${{ steps.token.outputs.token }}
+      - name: Build a new version if the tables changed
+        id: build
+        env:
+          APP_SLUG: ${{ steps.token.outputs.app-slug }}
+          GH_TOKEN: ${{ steps.token.outputs.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          python3 scripts/build_api.py | tee "$RUNNER_TEMP/build.txt"
+          if [ -z "$(git status --porcelain api)" ]; then
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          version=$(sed -n 's/^new version: //p' "$RUNNER_TEMP/build.txt")
+          bot_id=$(gh api "/users/${APP_SLUG}%5Bbot%5D" --jq .id)
+          git config user.name "${APP_SLUG}[bot]"
+          git config user.email "${bot_id}+${APP_SLUG}[bot]@users.noreply.github.com"
+          git add api
+          git commit -q -m "chore: publish API version $version"
+          git push origin HEAD:main
+          echo "committed=true" >> "$GITHUB_OUTPUT"
+
+          previous=$(sed -n 's/^previous version: //p' "$RUNNER_TEMP/build.txt")
+          url="https://github.com/$REPO"
+          {
+            echo "API version \`$version\`: <https://api.heroscapeknights.com/$version/index.json>"
+            echo
+            if [ -n "$previous" ]; then
+              echo "Changes since \`$previous\`: $url/compare/$previous...$version"
+            else
+              echo "The first version: $url/tree/$version"
+            fi
+          } > "$RUNNER_TEMP/notes.md"
+          gh release create "$version" --target "$(git rev-parse HEAD)" --title "API $version" --notes-file "$RUNNER_TEMP/notes.md"
+
+  deploy:
+    needs: version
+    if: needs.version.outputs.committed == 'false'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Assemble the site
+        run: |
+          if [ ! -d api ]; then echo "No versions yet; nothing to deploy."; exit 0; fi
+          python3 scripts/build_api.py --site _site
+      - uses: actions/upload-pages-artifact@v4
+        if: hashFiles('_site/index.json') != ''
+        with:
+          path: _site
+      - id: deployment
+        if: hashFiles('_site/index.json') != ''
+        uses: actions/deploy-pages@v4

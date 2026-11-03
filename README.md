@@ -22,7 +22,7 @@ Each version has these files:
 | `all.json` | All three in one file |
 | `index.json` | The version, the date the data was read, the files and their counts |
 
-`latest/` always matches the tables in this repository. Each change to the tables publishes a new version named for its day. A second change on the same day gets a suffix, such as `2026-11-04.2`. Pin a dated version if you don't want the data to change under you.
+`latest/` always matches the tables in this repository. Each change to the tables publishes a new version named for its day. A second change on the same day gets a suffix, such as `2026-11-04.2`. Pin a dated version if you don't want the data to change under you. Each version is also a [GitHub release](https://github.com/HeroscapeKnights/data/releases) tagged with its name, which links the diff from the version before.
 
 ```bash
 curl -s https://api.heroscapeknights.com/latest/units.json | jq '.[] | select(.general == "Jandar") | .display_name'

@@ -1,6 +1,7 @@
-# On each push to main: if the tables changed since the newest version, build api/<date>/ and
+# On each push to main: if the tables changed since the newest version, build api/<date>/,
 # commit it to main as the org's GitHub App, heroscape-bot (it may bypass the rule that main
-# only takes pull requests). That push runs this again, which finds nothing new and deploys.
+# only takes pull requests), and publish a GitHub release tagged with the version, linking the
+# diff from the previous one. That push runs this again, which finds nothing new and deploys.
 # When nothing is new, it publishes api/ to GitHub Pages at https://api.heroscapeknights.com,
 # with latest/ copied from the newest version. Run it from the Actions tab to redeploy.
 #
@@ -41,6 +42,7 @@ jobs:
         env:
           APP_SLUG: ${{ steps.token.outputs.app-slug }}
           GH_TOKEN: ${{ steps.token.outputs.token }}
+          REPO: ${{ github.repository }}
         run: |
           python3 scripts/build_api.py | tee "$RUNNER_TEMP/build.txt"
           if [ -z "$(git status --porcelain api)" ]; then
@@ -55,6 +57,19 @@ jobs:
           git commit -q -m "API version $version"
           git push origin HEAD:main
           echo "committed=true" >> "$GITHUB_OUTPUT"
+
+          previous=$(sed -n 's/^previous version: //p' "$RUNNER_TEMP/build.txt")
+          url="https://github.com/$REPO"
+          {
+            echo "API version \`$version\`: <https://api.heroscapeknights.com/$version/index.json>"
+            echo
+            if [ -n "$previous" ]; then
+              echo "Changes since \`$previous\`: $url/compare/$previous...$version"
+            else
+              echo "The first version. Tables: $url/tree/$version/tables"
+            fi
+          } > "$RUNNER_TEMP/notes.md"
+          gh release create "$version" --target "$(git rev-parse HEAD)" --title "API $version" --notes-file "$RUNNER_TEMP/notes.md"
 
   deploy:
     needs: version

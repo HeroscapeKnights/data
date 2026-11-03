@@ -212,6 +212,8 @@ def main():
         with open(os.path.join(API, name, fname), "w", encoding="utf-8", newline="\n") as f:
             f.write(text)
     print("new version: %s" % name)
+    if names:
+        print("previous version: %s" % names[-1])
     return 0
 
 

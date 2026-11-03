@@ -1,6 +1,6 @@
 # Heroscape Knights data
 
-Reviewed data for every official Heroscape army card, from Hasbro and Wizards of the Coast (2004-2011) to Renegade Game Studios (2024 onward): stats, abilities, current points under each point system, card and figure images, and the sets they came in. [Heroscape Knights](https://heroscapeknights.pages.dev) is built from the same data.
+Reviewed data for every official Heroscape army card, from Hasbro and Wizards of the Coast (2004-2011) to Renegade Game Studios (2024 onward): stats, abilities, current points under each point system, card and figure images, and the sets they came in. [Heroscape Knights](https://heroscapeknights.com) is built from the same data.
 
 The tables in `tables/` are TSV files you can read here on GitHub. The same data is served as JSON at <https://api.heroscapeknights.com>.
 

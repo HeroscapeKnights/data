@@ -1,4 +1,3 @@
-# Pull requests: the tables must read and build. Nothing is written.
 name: Check
 
 on:

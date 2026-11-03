@@ -1,12 +1,5 @@
-# On each push to main: if the tables changed since the newest version, build api/<date>/,
-# commit it to main as the org's GitHub App, heroscape-bot (it may bypass the rule that main
-# only takes pull requests), and publish a GitHub release tagged with the version, linking the
-# diff from the previous one. That push runs this again, which finds nothing new and deploys.
-# When nothing is new, it publishes api/ to GitHub Pages at https://api.heroscapeknights.com,
-# with latest/ copied from the newest version. Run it from the Actions tab to redeploy.
-#
-# Needs the HEROSCAPE_BOT_CLIENT_ID variable and HEROSCAPE_BOT_PRIVATE_KEY secret on this repo,
-# and Pages set to deploy from GitHub Actions.
+# Committing a new version needs heroscape-bot's bypass of the pull-request rule on main.
+# That push runs this workflow again, and that run deploys.
 name: Release
 
 on:

@@ -52,7 +52,7 @@ datapackage.json            column types and keys for every table
 
 The format is TSV, UTF-8, with one header row. An empty cell means null, and list columns join items with `;`. Inside a cell, `\n` is a line break, `\t` a tab and `\\` a backslash. A cell containing a double quote is wrapped in double quotes, with the quotes inside doubled. Ids are lowercase slugs and never change.
 
-The tables are maintained in another repository, where each change is checked against the official cards before it's published here. Corrections are welcome as issues.
+Every row is checked against the official cards before it's published here. Corrections are welcome as issues.
 
 `scripts/build_api.py` builds the JSON from the tables using only Python's standard library: `python3 scripts/build_api.py --check`.
 

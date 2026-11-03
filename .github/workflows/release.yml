@@ -59,7 +59,7 @@ jobs:
             if [ -n "$previous" ]; then
               echo "Changes since \`$previous\`: $url/compare/$previous...$version"
             else
-              echo "The first version. Tables: $url/tree/$version/tables"
+              echo "The first version: $url/tree/$version"
             fi
           } > "$RUNNER_TEMP/notes.md"
           gh release create "$version" --target "$(git rev-parse HEAD)" --title "API $version" --notes-file "$RUNNER_TEMP/notes.md"

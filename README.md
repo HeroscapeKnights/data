@@ -2,7 +2,7 @@
 
 Reviewed data for every official Heroscape army card, from Hasbro and Wizards of the Coast (2004-2011) to Renegade Game Studios (2024 onward): stats, abilities, current points under each point system, card and figure images, and the sets they came in. [Heroscape Knights](https://heroscapeknights.com) is built from the same data.
 
-The tables in `tables/` are TSV files you can read here on GitHub. The same data is served as JSON at <https://api.heroscapeknights.com>.
+The `.tsv` files here are tables you can read on GitHub. The same data is served as JSON at <https://api.heroscapeknights.com>.
 
 ## The API
 
@@ -22,7 +22,7 @@ Each version has these files:
 | `all.json` | All three in one file |
 | `index.json` | The version, the date the data was read, the files and their counts |
 
-`latest/` always matches the tables in this repository. Each change to the tables publishes a new version named for its day. A second change on the same day gets a suffix, such as `2026-11-04.2`. Pin a dated version if you don't want the data to change under you. Each version is also a [GitHub release](https://github.com/HeroscapeKnights/data/releases) tagged with its name, which links the diff from the version before.
+`latest/` always matches the TSV files in this repository. Each change to the tables publishes a new version named for its day. A second change on the same day gets a suffix, such as `2026-11-04.2`. Pin a dated version if you don't want the data to change under you. Each version is also a [GitHub release](https://github.com/HeroscapeKnights/data/releases) tagged with its name, which links the diff from the version before.
 
 ```bash
 curl -s https://api.heroscapeknights.com/latest/units.json | jq '.[] | select(.general == "Jandar") | .display_name'
@@ -40,14 +40,15 @@ Dates are partial ISO dates (`YYYY`, `YYYY-MM` or `YYYY-MM-DD`). An unknown valu
 ## The tables
 
 ```
-tables/units.tsv            one row per army card
-tables/abilities.tsv        special powers, in card order
-tables/images.tsv           card and figure images, with credits
-tables/sets.tsv             card sets and waves
-tables/point_systems.tsv    point systems and the release each uses
-tables/point_releases.tsv   those releases
-tables/points/<system>/<release>.tsv   points for each unit
-datapackage.json            column types and keys for every table
+units.tsv            one row per army card
+abilities.tsv        special powers, in card order
+images.tsv           card and figure images, with credits
+sets.tsv             card sets and waves
+point_systems.tsv    point systems and the release each uses
+point_releases.tsv   those releases
+points/<system>/<release>.tsv   points for each unit
+datapackage.json     column types and keys for every table
+api/<version>/       the JSON for each published version
 ```
 
 The format is TSV, UTF-8, with one header row. An empty cell means null, and list columns join items with `;`. Inside a cell, `\n` is a line break, `\t` a tab and `\\` a backslash. A cell containing a double quote is wrapped in double quotes, with the quotes inside doubled. Ids are lowercase slugs and never change.

@@ -1,0 +1,562 @@
+[
+ {
+  "id": "rise-of-the-valkyrie",
+  "name": "Rise of the Valkyrie",
+  "abbreviation": "RotV",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "master-set",
+  "wave_number": null,
+  "release_date": "2004-08",
+  "aliases": []
+ },
+ {
+  "id": "malliddons-prophecy",
+  "name": "Malliddon's Prophecy",
+  "abbreviation": "MP",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "wave",
+  "wave_number": "1",
+  "release_date": "2005-01",
+  "aliases": [
+   "Mallidon's Prophecy"
+  ]
+ },
+ {
+  "id": "utgars-rage",
+  "name": "Utgar's Rage",
+  "abbreviation": "UR",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "wave",
+  "wave_number": "2",
+  "release_date": "2005-05",
+  "aliases": []
+ },
+ {
+  "id": "orms-return",
+  "name": "Orm's Return",
+  "abbreviation": "OR",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "large-expansion",
+  "wave_number": null,
+  "release_date": "2005-07",
+  "aliases": [
+   "Orms Return"
+  ]
+ },
+ {
+  "id": "road-to-the-forgotten-forest",
+  "name": "Road to the Forgotten Forest",
+  "abbreviation": "RttFF",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "terrain-expansion",
+  "wave_number": null,
+  "release_date": "2005-07",
+  "aliases": []
+ },
+ {
+  "id": "neraks-return",
+  "name": "Nerak's Return",
+  "abbreviation": "NR",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "promo",
+  "wave_number": null,
+  "release_date": "2005-08",
+  "aliases": []
+ },
+ {
+  "id": "volcarren-wasteland",
+  "name": "Volcarren Wasteland",
+  "abbreviation": "VW",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "terrain-expansion",
+  "wave_number": null,
+  "release_date": "2005-08",
+  "aliases": []
+ },
+ {
+  "id": "jandars-oath",
+  "name": "Jandar's Oath",
+  "abbreviation": "JO",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "wave",
+  "wave_number": "3",
+  "release_date": "2005-09",
+  "aliases": []
+ },
+ {
+  "id": "vipers-vengeance",
+  "name": "Viper's Vengeance",
+  "abbreviation": "VV05",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "promo",
+  "wave_number": null,
+  "release_date": "2005-11",
+  "aliases": []
+ },
+ {
+  "id": "zanafors-discovery",
+  "name": "Zanafor's Discovery",
+  "abbreviation": "ZD",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "wave",
+  "wave_number": "4",
+  "release_date": "2006-02",
+  "aliases": []
+ },
+ {
+  "id": "raknars-vision",
+  "name": "Raknar's Vision",
+  "abbreviation": "RV",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "large-expansion",
+  "wave_number": null,
+  "release_date": "2006-05",
+  "aliases": []
+ },
+ {
+  "id": "thaelenk-tundra",
+  "name": "Thaelenk Tundra",
+  "abbreviation": "TT06",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "terrain-expansion",
+  "wave_number": null,
+  "release_date": "2006-05",
+  "aliases": []
+ },
+ {
+  "id": "sir-hawthornes-arrival",
+  "name": "Sir Hawthorne's Arrival",
+  "abbreviation": "SHA",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "promo",
+  "wave_number": null,
+  "release_date": "2006-08",
+  "aliases": []
+ },
+ {
+  "id": "thoras-vengeance",
+  "name": "Thora's Vengeance",
+  "abbreviation": "TV",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "wave",
+  "wave_number": "5",
+  "release_date": "2006-08",
+  "aliases": [
+   "Thora's Vengance"
+  ]
+ },
+ {
+  "id": "crest-of-the-valkyrie",
+  "name": "Crest of the Valkyrie",
+  "abbreviation": "CotV",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "promo",
+  "wave_number": null,
+  "release_date": "2006-12",
+  "aliases": [
+   "Special Release: Crest of the Valkyrie",
+   "Crest's of the Valkyrie",
+   "Flag Bearers"
+  ]
+ },
+ {
+  "id": "dawn-of-darkness",
+  "name": "Dawn of Darkness",
+  "abbreviation": "DoD",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "wave",
+  "wave_number": "6",
+  "release_date": "2007-03",
+  "aliases": []
+ },
+ {
+  "id": "fields-of-valor",
+  "name": "Fields of Valor",
+  "abbreviation": "FoV",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "wave",
+  "wave_number": "7",
+  "release_date": "2007-06",
+  "aliases": []
+ },
+ {
+  "id": "the-masters-arrival",
+  "name": "The Master's Arrival",
+  "abbreviation": "MA",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "promo",
+  "wave_number": null,
+  "release_date": "2007-07",
+  "aliases": []
+ },
+ {
+  "id": "marvel-the-conflict-begins",
+  "name": "Marvel: The Conflict Begins",
+  "abbreviation": "MTCB",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "marvel",
+  "kind": "master-set",
+  "wave_number": null,
+  "release_date": "2007-08",
+  "aliases": [
+   "The Conflict Begins"
+  ]
+ },
+ {
+  "id": "swarm-of-the-marro",
+  "name": "Swarm of the Marro",
+  "abbreviation": "SotM",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "master-set",
+  "wave_number": null,
+  "release_date": "2007-08",
+  "aliases": []
+ },
+ {
+  "id": "aquillas-alliance",
+  "name": "Aquilla's Alliance",
+  "abbreviation": "AA",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "large-expansion",
+  "wave_number": null,
+  "release_date": "2008-06",
+  "aliases": []
+ },
+ {
+  "id": "defenders-of-kinsland",
+  "name": "Defenders of Kinsland",
+  "abbreviation": "DoK",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "wave",
+  "wave_number": "8",
+  "release_date": "2008-06",
+  "aliases": []
+ },
+ {
+  "id": "ticalla-jungle",
+  "name": "Ticalla Jungle",
+  "abbreviation": "TJ",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "terrain-expansion",
+  "wave_number": null,
+  "release_date": "2008-06",
+  "aliases": []
+ },
+ {
+  "id": "skahens-rescue",
+  "name": "Skahen's Rescue",
+  "abbreviation": "SR",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "promo",
+  "wave_number": null,
+  "release_date": "2008-08",
+  "aliases": []
+ },
+ {
+  "id": "blackmoons-siege",
+  "name": "Blackmoon's Siege",
+  "abbreviation": "BS",
+  "publisher": "wotc",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "wave",
+  "wave_number": "9",
+  "release_date": "2009-06",
+  "aliases": [
+   "Blackmoon Siege"
+  ]
+ },
+ {
+  "id": "valkrills-gambit",
+  "name": "Valkrill's Gambit",
+  "abbreviation": "VG",
+  "publisher": "wotc",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "wave",
+  "wave_number": "10",
+  "release_date": "2009-10",
+  "aliases": []
+ },
+ {
+  "id": "battle-for-the-underdark",
+  "name": "Battle for the Underdark",
+  "abbreviation": "BftU",
+  "publisher": "wotc",
+  "era": "classic",
+  "line": "dnd",
+  "kind": "master-set",
+  "wave_number": null,
+  "release_date": "2010-01",
+  "aliases": [
+   "Battle of the Underdark"
+  ]
+ },
+ {
+  "id": "champions-of-the-forgotten-realms",
+  "name": "Champions of the Forgotten Realms",
+  "abbreviation": "CotFR",
+  "publisher": "wotc",
+  "era": "classic",
+  "line": "dnd",
+  "kind": "wave",
+  "wave_number": "D1",
+  "release_date": "2010-03",
+  "aliases": []
+ },
+ {
+  "id": "warriors-of-eberron",
+  "name": "Warriors of Eberron",
+  "abbreviation": "WoE",
+  "publisher": "wotc",
+  "era": "classic",
+  "line": "dnd",
+  "kind": "wave",
+  "wave_number": "D2",
+  "release_date": "2010-08",
+  "aliases": []
+ },
+ {
+  "id": "forever-valiant",
+  "name": "Forever Valiant",
+  "abbreviation": "FV",
+  "publisher": "hasbro",
+  "era": "classic",
+  "line": "heroscape",
+  "kind": "promo",
+  "wave_number": null,
+  "release_date": "2010-11",
+  "aliases": []
+ },
+ {
+  "id": "moltenclaws-invasion",
+  "name": "Moltenclaw's Invasion",
+  "abbreviation": "MI",
+  "publisher": "wotc",
+  "era": "classic",
+  "line": "dnd",
+  "kind": "wave",
+  "wave_number": "D3",
+  "release_date": "2010-11",
+  "aliases": []
+ },
+ {
+  "id": "age-of-annihilation",
+  "name": "Age of Annihilation",
+  "abbreviation": "AoA",
+  "publisher": "renegade",
+  "era": "renegade",
+  "line": "heroscape",
+  "kind": "master-set",
+  "wave_number": null,
+  "release_date": "2024-08",
+  "aliases": []
+ },
+ {
+  "id": "revnas-rebuke",
+  "name": "Revna's Rebuke",
+  "abbreviation": "RR",
+  "publisher": "renegade",
+  "era": "renegade",
+  "line": "heroscape",
+  "kind": "wave",
+  "wave_number": null,
+  "release_date": "2024-10",
+  "aliases": []
+ },
+ {
+  "id": "rising-tide",
+  "name": "Rising Tide",
+  "abbreviation": "RT",
+  "publisher": "renegade",
+  "era": "renegade",
+  "line": "heroscape",
+  "kind": "wave",
+  "wave_number": null,
+  "release_date": "2025-02",
+  "aliases": []
+ },
+ {
+  "id": "boiling-tension",
+  "name": "Boiling Tension",
+  "abbreviation": "BT",
+  "publisher": "renegade",
+  "era": "renegade",
+  "line": "heroscape",
+  "kind": "wave",
+  "wave_number": null,
+  "release_date": "2025-06",
+  "aliases": [
+   "Boiling Tensions"
+  ]
+ },
+ {
+  "id": "scapecon-2025",
+  "name": "ScapeCon 2025 Promotional Figure",
+  "abbreviation": "SC25",
+  "publisher": "renegade",
+  "era": "renegade",
+  "line": "heroscape",
+  "kind": "promo",
+  "wave_number": null,
+  "release_date": "2025-06",
+  "aliases": []
+ },
+ {
+  "id": "embers-of-war",
+  "name": "Embers of War",
+  "abbreviation": "EoW",
+  "publisher": "renegade",
+  "era": "renegade",
+  "line": "heroscape",
+  "kind": "wave",
+  "wave_number": null,
+  "release_date": "2025-10",
+  "aliases": []
+ },
+ {
+  "id": "yo-joe",
+  "name": "Yo, Joe",
+  "abbreviation": "YJ",
+  "publisher": "renegade",
+  "era": "renegade",
+  "line": "gi-joe",
+  "kind": "wave",
+  "wave_number": null,
+  "release_date": "2026-03",
+  "aliases": [
+   "G.I. Joe: Yo, Joe"
+  ]
+ },
+ {
+  "id": "gathering-storm",
+  "name": "Gathering Storm",
+  "abbreviation": "GS",
+  "publisher": "renegade",
+  "era": "renegade",
+  "line": "heroscape",
+  "kind": "wave",
+  "wave_number": null,
+  "release_date": "2026-04",
+  "aliases": []
+ },
+ {
+  "id": "thormuns-thunder",
+  "name": "Thormun's Thunder",
+  "abbreviation": "TT",
+  "publisher": "renegade",
+  "era": "renegade",
+  "line": "heroscape",
+  "kind": "wave",
+  "wave_number": null,
+  "release_date": "2026-05",
+  "aliases": []
+ },
+ {
+  "id": "secrets-of-the-citadel",
+  "name": "Secrets of the Citadel",
+  "abbreviation": "SotC",
+  "publisher": "renegade",
+  "era": "renegade",
+  "line": "heroscape",
+  "kind": "wave",
+  "wave_number": null,
+  "release_date": "2026-08",
+  "aliases": []
+ },
+ {
+  "id": "nastras-nightmare",
+  "name": "Nastra's Nightmare",
+  "abbreviation": "NN",
+  "publisher": "renegade",
+  "era": "renegade",
+  "line": "heroscape",
+  "kind": "wave",
+  "wave_number": null,
+  "release_date": "2026-10-26",
+  "aliases": []
+ },
+ {
+  "id": "valdas-vow",
+  "name": "Valda's Vow",
+  "abbreviation": "VVow",
+  "publisher": "renegade",
+  "era": "renegade",
+  "line": "heroscape",
+  "kind": "wave",
+  "wave_number": null,
+  "release_date": "2027-02",
+  "aliases": []
+ },
+ {
+  "id": "gi-joe-is-there",
+  "name": "G.I. Joe is There",
+  "abbreviation": "GIJIT",
+  "publisher": "renegade",
+  "era": "renegade",
+  "line": "gi-joe",
+  "kind": "wave",
+  "wave_number": null,
+  "release_date": "2027-03",
+  "aliases": []
+ },
+ {
+  "id": "bleakewoodes-bane",
+  "name": "Bleakewoode's Bane",
+  "abbreviation": "BB",
+  "publisher": "renegade",
+  "era": "renegade",
+  "line": "heroscape",
+  "kind": "wave",
+  "wave_number": null,
+  "release_date": "2027-05",
+  "aliases": []
+ }
+]

@@ -1,0 +1,66 @@
+[
+ {
+  "id": "delta",
+  "name": "Delta (Classic)",
+  "kind": "community",
+  "url": "https://www.heroscapers.com/threads/delta-latest-updates-and-discussion.59583/",
+  "notes": "Community point system maintained on heroscapers.com. Classic track: official units only.",
+  "release": {
+   "id": "delta-2026-10-11",
+   "version": "2026-10-11 capture",
+   "effective_date": null,
+   "captured_at": "2026-10-11",
+   "coverage": "official units (Delta Classic)",
+   "rules_basis": "current official card text",
+   "source_url": "https://heroscape.org/builder/?delta=true&vc=false"
+  }
+ },
+ {
+  "id": "delta-vc",
+  "name": "Delta (VC)",
+  "kind": "community",
+  "url": "https://www.heroscapers.com/threads/delta-latest-updates-and-discussion.59583/",
+  "notes": "Delta track that also prices C3V/SoV customs. Only official units are stored until customs are imported.",
+  "release": {
+   "id": "delta-vc-2026-10-11",
+   "version": "2026-10-11 capture",
+   "effective_date": null,
+   "captured_at": "2026-10-11",
+   "coverage": "official units only (custom units not imported)",
+   "rules_basis": "current official card text",
+   "source_url": "https://heroscape.org/builder/?delta=true&vc=true"
+  }
+ },
+ {
+  "id": "official",
+  "name": "Official (current)",
+  "kind": "official",
+  "url": "https://playheroscape.renegadegamestudios.com/cards",
+  "notes": "Current official points: Renegade's card database, including Renegade's repricing of classic cards. Cards Renegade does not list (Marvel, ScapeCon promo) keep their printed value.",
+  "release": {
+   "id": "official-2026-10-11",
+   "version": "2026-10-11",
+   "effective_date": null,
+   "captured_at": "2026-10-11",
+   "coverage": "all official units",
+   "rules_basis": "current official card text (abilities.tsv)",
+   "source_url": "https://playheroscape.renegadegamestudios.com/cards"
+  }
+ },
+ {
+  "id": "original",
+  "name": "Original printed",
+  "kind": "official",
+  "url": "https://heroscape.org/builder/",
+  "notes": "Points printed on each card's first printing (Hasbro/WotC for classic cards).",
+  "release": {
+   "id": "original-printed",
+   "version": "printed",
+   "effective_date": null,
+   "captured_at": "2026-10-11",
+   "coverage": "all official units",
+   "rules_basis": "each card's first printing (see errata.tsv for later changes)",
+   "source_url": "https://heroscape.org/builder/"
+  }
+ }
+]

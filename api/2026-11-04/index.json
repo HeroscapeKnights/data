@@ -1,0 +1,16 @@
+{
+ "version": "2026-11-04",
+ "data_as_of": "2026-10-11",
+ "files": {
+  "units": "units.json",
+  "sets": "sets.json",
+  "point_systems": "point_systems.json",
+  "all": "all.json"
+ },
+ "counts": {
+  "units": 370,
+  "sets": 45,
+  "point_systems": 4
+ },
+ "notice": "Images are hotlinked from their owners: show each image's credit wherever you show the image. HEROSCAPE is a trademark of Hasbro, used under license by Renegade Game Studios. This is a fan project, not affiliated with Hasbro, Wizards of the Coast or Renegade Game Studios."
+}

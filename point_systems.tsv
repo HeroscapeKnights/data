@@ -1,0 +1,5 @@
+id	name	kind	active_release	url	notes
+delta	Delta (Classic)	community	delta-2026-10-11	https://www.heroscapers.com/threads/delta-latest-updates-and-discussion.59583/	Community point system maintained on heroscapers.com. Classic track: official units only.
+delta-vc	Delta (VC)	community	delta-vc-2026-10-11	https://www.heroscapers.com/threads/delta-latest-updates-and-discussion.59583/	Delta track that also prices C3V/SoV customs. Only official units are stored until customs are imported.
+official	Official (current)	official	official-2026-10-11	https://playheroscape.renegadegamestudios.com/cards	Current official points: Renegade's card database, including Renegade's repricing of classic cards. Cards Renegade does not list (Marvel, ScapeCon promo) keep their printed value.
+original	Original printed	official	original-printed	https://heroscape.org/builder/	Points printed on each card's first printing (Hasbro/WotC for classic cards).

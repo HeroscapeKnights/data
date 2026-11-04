@@ -1,0 +1,654 @@
+{
+  "name": "heroscapeknights-data",
+  "title": "Heroscape figure dataset",
+  "description": "Verified Heroscape army cards with their abilities, images, sets and current points. See README.md.",
+  "schema_version": 1,
+  "x-dialect": {
+    "delimiter": "\t",
+    "header": true,
+    "quoting": "minimal",
+    "quoteChar": "\"",
+    "doubleQuote": true,
+    "lineTerminator": "\n",
+    "encoding": "utf-8",
+    "escapes": {
+      "\\\\": "backslash",
+      "\\t": "tab",
+      "\\n": "newline"
+    },
+    "null": "",
+    "listSeparator": ";"
+  },
+  "licenses": [
+    {
+      "name": "Data compilation: see README.md#attribution",
+      "path": "README.md"
+    }
+  ],
+  "resources": [
+    {
+      "name": "sets",
+      "path": "sets.tsv",
+      "description": "Card sets / waves: the release grouping printed on or used for a card (Rise of the Valkyrie, Utgar's Rage, Rising Tide, ...).",
+      "schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "abbreviation",
+            "type": "string"
+          },
+          {
+            "name": "publisher",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "era",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "enum": [
+                "classic",
+                "renegade",
+                "community"
+              ]
+            }
+          },
+          {
+            "name": "line",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "enum": [
+                "heroscape",
+                "marvel",
+                "dnd",
+                "gi-joe",
+                "custom"
+              ]
+            }
+          },
+          {
+            "name": "kind",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "enum": [
+                "master-set",
+                "wave",
+                "large-expansion",
+                "terrain-expansion",
+                "promo",
+                "subset"
+              ]
+            }
+          },
+          {
+            "name": "wave_number",
+            "type": "string"
+          },
+          {
+            "name": "release_date",
+            "type": "date",
+            "x-partial": true
+          },
+          {
+            "name": "aliases",
+            "type": "list"
+          },
+          {
+            "name": "status",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "enum": [
+                "verified",
+                "unverified",
+                "draft"
+              ]
+            }
+          },
+          {
+            "name": "sources",
+            "type": "list"
+          },
+          {
+            "name": "notes",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "id"
+        ]
+      }
+    },
+    {
+      "name": "units",
+      "path": "units.tsv",
+      "description": "One row per army card design that can be played on its own (a 'unit'). Holds the CURRENT official card. Replacement errata keeps the id; a separately playable redesign of the same character gets a new id with a version_label and the same character_id.",
+      "schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            },
+            "description": "Frozen slug. Never renamed or reused."
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "constraints": {
+              "required": true
+            },
+            "description": "Card name without the version suffix."
+          },
+          {
+            "name": "version_label",
+            "type": "string",
+            "description": "Short label that tells versions of the same character apart, e.g. RotV, SotM, AoA."
+          },
+          {
+            "name": "character_id",
+            "type": "string",
+            "constraints": {
+              "required": true
+            },
+            "description": "Shared by every version of the same character."
+          },
+          {
+            "name": "origin",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "enum": [
+                "official",
+                "custom"
+              ]
+            }
+          },
+          {
+            "name": "publisher",
+            "type": "string",
+            "constraints": {
+              "required": true
+            },
+            "description": "hasbro, wotc, renegade; customs later: c3v, sov, ..."
+          },
+          {
+            "name": "era",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "enum": [
+                "classic",
+                "renegade",
+                "community"
+              ]
+            }
+          },
+          {
+            "name": "general",
+            "type": "string"
+          },
+          {
+            "name": "kind",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "enum": [
+                "hero",
+                "squad"
+              ]
+            }
+          },
+          {
+            "name": "rarity",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "enum": [
+                "unique",
+                "common",
+                "uncommon"
+              ]
+            }
+          },
+          {
+            "name": "species",
+            "type": "list"
+          },
+          {
+            "name": "classes",
+            "type": "list"
+          },
+          {
+            "name": "personality",
+            "type": "string"
+          },
+          {
+            "name": "size",
+            "type": "string"
+          },
+          {
+            "name": "height",
+            "type": "integer"
+          },
+          {
+            "name": "homeworld",
+            "type": "string"
+          },
+          {
+            "name": "life",
+            "type": "integer"
+          },
+          {
+            "name": "move",
+            "type": "integer"
+          },
+          {
+            "name": "range",
+            "type": "integer"
+          },
+          {
+            "name": "attack",
+            "type": "integer"
+          },
+          {
+            "name": "defense",
+            "type": "integer"
+          },
+          {
+            "name": "figures",
+            "type": "integer",
+            "description": "Figures on the card."
+          },
+          {
+            "name": "hexes",
+            "type": "integer",
+            "description": "Total spaces occupied by all figures on the card (carde.io 'Spaces')."
+          },
+          {
+            "name": "set_id",
+            "type": "string",
+            "constraints": {
+              "required": true
+            },
+            "x-references": "sets",
+            "description": "Set the card first appeared in."
+          },
+          {
+            "name": "contemporary_legal",
+            "type": "boolean",
+            "description": "Legal in Renegade's Contemporary format per the official card database when it was last read. Empty = unknown."
+          },
+          {
+            "name": "aliases",
+            "type": "list",
+            "description": "Other spellings and community names, for search and matching."
+          },
+          {
+            "name": "status",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "enum": [
+                "verified",
+                "unverified",
+                "draft"
+              ]
+            },
+            "description": "verified: card fields agree across at least two independent sources or were checked by a reviewer. unverified: single source or unresolved conflict (see notes). draft: imported by a script, waiting for review."
+          },
+          {
+            "name": "sources",
+            "type": "list"
+          },
+          {
+            "name": "notes",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "id"
+        ]
+      }
+    },
+    {
+      "name": "abilities",
+      "path": "abilities.tsv",
+      "description": "Current special powers, in card order. Line breaks inside an ability are kept as \\n.",
+      "schema": {
+        "fields": [
+          {
+            "name": "unit_id",
+            "type": "string",
+            "constraints": {
+              "required": true
+            },
+            "x-references": "units"
+          },
+          {
+            "name": "seq",
+            "type": "integer",
+            "constraints": {
+              "required": true,
+              "minimum": 1
+            }
+          },
+          {
+            "name": "key",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            },
+            "description": "Stable per-unit ability id used by errata."
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "text",
+            "type": "string",
+            "description": "Empty for keyword abilities such as Flying."
+          }
+        ],
+        "primaryKey": [
+          "unit_id",
+          "seq"
+        ],
+        "uniqueKeys": [
+          [
+            "unit_id",
+            "key"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "point_systems",
+      "path": "point_systems.tsv",
+      "description": "Point systems and which release of each is active.",
+      "schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "kind",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "enum": [
+                "official",
+                "community"
+              ]
+            }
+          },
+          {
+            "name": "active_release",
+            "type": "string",
+            "constraints": {
+              "required": true
+            },
+            "x-references": "point_releases"
+          },
+          {
+            "name": "url",
+            "type": "string"
+          },
+          {
+            "name": "notes",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "id"
+        ]
+      }
+    },
+    {
+      "name": "point_releases",
+      "path": "point_releases.tsv",
+      "description": "Immutable point snapshots. Each release has a file points/<system_id>/<id>.tsv.",
+      "schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            }
+          },
+          {
+            "name": "system_id",
+            "type": "string",
+            "constraints": {
+              "required": true
+            },
+            "x-references": "point_systems"
+          },
+          {
+            "name": "version",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "effective_date",
+            "type": "date",
+            "x-partial": true
+          },
+          {
+            "name": "captured_at",
+            "type": "date",
+            "x-partial": true
+          },
+          {
+            "name": "coverage",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "rules_basis",
+            "type": "string",
+            "constraints": {
+              "required": true
+            },
+            "description": "Which card text the costs assume."
+          },
+          {
+            "name": "source_url",
+            "type": "string"
+          },
+          {
+            "name": "notes",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "id"
+        ]
+      }
+    },
+    {
+      "name": "points",
+      "path": "points/{system_id}/{release_id}.tsv",
+      "x-multifile": true,
+      "description": "One snapshot file per point release. unit_name is the display name when the snapshot was written, kept so diffs are readable; snapshots are immutable, so it is not updated after a rename or a new version_label and the validator checks rows by unit_id. last_changed must not be after the release's effective_date or captured_at.",
+      "schema": {
+        "fields": [
+          {
+            "name": "unit_id",
+            "type": "string",
+            "constraints": {
+              "required": true
+            },
+            "x-references": "units"
+          },
+          {
+            "name": "unit_name",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "points",
+            "type": "integer"
+          },
+          {
+            "name": "status",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "enum": [
+                "priced",
+                "unpriced",
+                "banned"
+              ]
+            }
+          },
+          {
+            "name": "last_changed",
+            "type": "date",
+            "x-partial": true
+          },
+          {
+            "name": "notes",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "unit_id"
+        ]
+      }
+    },
+    {
+      "name": "images",
+      "path": "images.tsv",
+      "description": "Hotlinked images with credit. Nothing is rehosted.",
+      "schema": {
+        "fields": [
+          {
+            "name": "subject_type",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "enum": [
+                "unit",
+                "product",
+                "glyph"
+              ]
+            }
+          },
+          {
+            "name": "subject_id",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "seq",
+            "type": "integer",
+            "constraints": {
+              "required": true,
+              "minimum": 1
+            }
+          },
+          {
+            "name": "kind",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "enum": [
+                "card-front",
+                "card-back",
+                "figure",
+                "painted-figure",
+                "box",
+                "box-back",
+                "gallery"
+              ]
+            }
+          },
+          {
+            "name": "url",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "pattern": "^https://\\S+$"
+            }
+          },
+          {
+            "name": "credit",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "source_id",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "rights_note",
+            "type": "string"
+          },
+          {
+            "name": "alt",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "subject_type",
+          "subject_id",
+          "seq"
+        ]
+      }
+    }
+  ]
+}
